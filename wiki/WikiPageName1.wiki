@@ -1,13 +1,29 @@
-
 = Introduction =
 
-Name:Yanzhao Yang
+*Name*:Yanzhao Yang
+*BannerID*:N02202273
+*Undergraduate Major*:Computer Science
+*Hometown*:China,Beijing
+*Taken Courses*:
+Database Principle
+Compiler Design
+Foundation
+Algorithm
+Assembly Language
+Data Security
+Advanced Computer Achitecture
 
+= Details=
 
+_Graduate period_:
 
-= Details =
+Implement assembly language virtual machine (*Python*): Parse File, Error Checking, etc.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Implement a simple compiler (*Java*):  parse each Java input line at first; then identify different tokens by TokenManager method, and transfer tokens to assembly language by code generator; finally get results by compiling assembly language.
+
+_Undergraduate period_:
+Developed a pervasive drum game as Graduation Thesis
+
+Developed a basketball association DBMS (*Power Builder*): 
+
+Developed a Electronic Albums (*Power Builder*): using Datawindow connects database, PowerScript implement different operations, such as switch visual angle, searching, sorting, etc.
