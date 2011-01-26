@@ -6,11 +6,17 @@
 *Hometown*:China,Beijing
 *Taken Courses*:
 Database Principle
+
 Compiler Design
+
 Foundation
+
 Algorithm
+
 Assembly Language
+
 Data Security
+
 Advanced Computer Achitecture
 
 = Details=
