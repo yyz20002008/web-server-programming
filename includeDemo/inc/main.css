@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+
+#body{
+font-family: Tahoma;
+background-color: #88888FF;
+
+
+}
+#all{
+width: 778px;
+background color: #FFFFFFF;
+margins:auto;
+
+}
+#head{
+heigjt:100px;
+border:1px solid black;
+
+}
+
+#nav{
+width:75px;
+flost: left;
+}
+#foot{
+clear:both;
+
+}
+
+
+#content{
+width:690px;
+flost: left;
+}
