@@ -5,12 +5,15 @@
 <title>Insert title here</title>
 <link href="inc/main.css" ref="stylesheet" type="text/css"/>
 </head>
+
 <body>
-     <divid='all'>
+
+     <div id="all">
             <?php include 'inc/head.php';?>
             <?php include 'inc/nav.php';?>
-            <div id='content'>
-                    <h1> This is a test of the Content</h1>
+            <div id="content">
+                    <h1> This is a test of the Content
+                    </h1>
                     <p>
                         Some random test
                     </p>
