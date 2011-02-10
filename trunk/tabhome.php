@@ -7,7 +7,7 @@
 </head>
 
 <body>
-        <?php $section = 'home'; ?>
+        <?php $arr[0][0] ?>
         <?php include ('incFeb3/tabs.php'); ?>
     <div class="content">
         Welcome to my site
