@@ -1,38 +1,33 @@
 <?php
-        if(!isset($section)) $section = 'home';
-        $arr =array('Sunday'=>'First Day of week',
-                    'Monday'=>'Something else',
-                    'Tuesday'=>array ('10:00',11,12.5)
+        //if(!isset($section)) $section = 'home';
+        $arr =array('home','links','about','pictures'
         );
-        $FirstName ="Yanzhao";
-        $LastName ="Yang";
-        $Name = $FirstName.' '.$LastName;
-        echo "Hello $Name";
         
 ?>
 
         <div class="tabbar">
-        <div class="tab <?php echo $section=='home' ? 'currenttab' : '' ?>">
+        <div class="tab <?php echo $arr[0] ? 'currenttab' : '' ?>">
                 <a href="tabhome.php">
-                        Home
+                        
+                        <?php echo $arr[0]?>
                 </a>
         </div>
-        <div class="tab <?php echo $section=='links' ? 'currenttab' : '' ?>">
+        <div class="tab <?php echo $arr[1] ? 'currenttab' : '' ?>">
             <a href="tablinks.php">
-                        Links
+                         <?php echo $arr[1]?>
             </a>
         </div>
-        <div class="tab <?php echo $section=='about' ? 'currenttab' : '' ?>">
+        <div class="tab <?php echo $arr[2] ? 'currenttab' : '' ?>">
             <a href="tababout.php">
-                         About
+                          <?php echo $arr[2]?>
             </a>
         </div>
-        <div class="tab <?php echo $section=='pictures' ? 'currenttab' : '' ?>">
+        <div class="tab <?php echo $arr[3] ? 'currenttab' : '' ?>">
             <a href="tabpictures.php">
-                         Pictures
+                         <?php echo $arr[3]?>
             </a>
         </div>
-      
+
         <br clear="all" />
     </div>
 
