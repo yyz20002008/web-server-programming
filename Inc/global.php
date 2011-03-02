@@ -1,8 +1,8 @@
 <?php
-require_once('passwords.php');
+require_once( 'passwords.php');
 function getConnection()
 {
-    global $dbpassword;
-    return new mysql('','yang',$dbpassword,'yang_db');
-
+        global $dbPassword;
+        return new mysqli('', 'N02202273', 's051187', 'N02202273_db' );
 }
+?>
