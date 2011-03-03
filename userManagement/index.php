@@ -1,30 +1,34 @@
 <?
         require_once('../Inc/global.php');
-        $conn = getConnection();
-        echo $conn->connect_error;
-        $result = $conn->query('SELECT * FROM People P Join Address A ON A.Person_id=P.id');
+        require_once('userData.php');
+        $result = GetUsers();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>dsfsdfsf</title>
+<title>Insert title here</title>
 </head>
 <body>
 <table border="1">
+                        <tr>
+                                <th>Actions</th>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>Password</th>
+                        </tr>
         
         <? while($rs = $result->fetch_assoc()){ ?>
-                <? if(!isset($somevar)){ $somevar=true; ?>
-                        <tr>
-                        <? foreach($rs as $key => $value){ ?>
-                                <th><?=$key?></th>
-                        <? } ?>
-                        </tr>
-                <? } ?>
                 <tr>
-                        <? foreach($rs as $value){ ?>
-                                <td><?=$value?></td>
-                        <? } ?>
+                        <td>
+                                <a href="view.php?id=<?=$rs['id']?>">View</a>
+                                <a href="edit.php?id=<?=$rs['id']?>">Edit</a>
+                                <a href="delete.php?id=<?=$rs['id']?>">Delete</a>
+                                
+                        </td>
+                        <td><?=$rs['FirstName']?></td>
+                        <td><?=$rs['LastName']?></td>
+                        <td><?=$rs['Password']?></td>
                 </tr>   
         
         <? } ?>
