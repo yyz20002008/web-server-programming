@@ -13,4 +13,4 @@ function GetUser($id)
         $conn->close();
         return $rs;
 }
-
+?>

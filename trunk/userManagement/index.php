@@ -1,7 +1,8 @@
 <?
-        require_once('../Inc/global.php');
+        require_once('../inc/global.php');
         require_once('userData.php');
         $result = GetUsers();
+        print_r($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +19,7 @@
                                 <th>Password</th>
                         </tr>
         
-        <? while($rs = $result->fetch_assoc()){ ?>
+        <?  while($rs = $result->fetch_assoc()){?>
                 <tr>
                         <td>
                                 <a href="view.php?id=<?=$rs['id']?>">View</a>
