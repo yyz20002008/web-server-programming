@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+label {
+        display: block;
+        float: left;
+        width: 150px;
+        text-align: right;
+        margin-right: 5px;
+}
+form div {
+        clear: both;
+}
+.error {
+        color: red;
+}
+input.error {
+        border: 1px solid red;
+}
