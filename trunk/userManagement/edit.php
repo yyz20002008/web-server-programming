@@ -4,9 +4,9 @@
         if(isset($_REQUEST['Submit']))
         {
                 $rs = $_REQUEST;
-                if($errors = ValidateUser($rs)) print_r($errors);
-                elseif($errors = SaveUser($rs)) print_r($errors);
-                else header("location: http://cs.newpaltz.edu/~plotkinm/WebCourse/UserManagement/");
+                if(!$errors = ValidateUser($rs))
+                        if(!$errors = SaveUser($rs))
+                                header("location: index.php");
         }else{
                 $rs = GetUser($_REQUEST['id']);
         }
@@ -14,33 +14,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Edit User: <?=$rs['FirstName']?> <?=$rs['LastName']?></title>
+        <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
+        <? if(isset($errors)) { ?>
+                <ul class="error">
+                        <? foreach($errors as $key => $error){ ?>
+                                <li><?=$key?>: <?=$error?></li>
+                        <? } ?>
+                </ul>
+        <? } ?>
         <form method="post">
                         <div>
+                                <label>ID:</label>
                                 <?=$rs['id']?>
                         </div>
                         <div>
-                                <label for="FirstName">First Name</label>
-                                <input type="text" name="FirstName" id="FirstName" value="<?=$rs['FirstName']?>" />
+                                <label for="FirstName">First Name:</label>
+                                <input  type="text" name="FirstName" id="FirstName"
+                                                class="<? if(isset($errors['FirstName'])){ ?>error<? } ?>"
+                                                value="<?=$rs['FirstName']?>" />
+                                                <? if(isset($errors['FirstName'])){ ?>
+                                                        <span class="error"><?=$errors['FirstName']?></span>
+                                                <? } ?>
                         </div>
                         <div>
-                                <label for="LastName">Last Name</label>
-                                <input type="text" name="LastName" id="LastName" value="<?=$rs['LastName']?>" />
+                                <label for="LastName">Last Name:</label>
+                                <input  type="text" name="LastName" id="LastName"
+                                                class="<? if(isset($errors['LastName'])){ ?>error<? } ?>"
+                                                value="<?=$rs['LastName']?>" />
+                                                <? if(isset($errors['LastName'])){ ?>
+                                                        <span class="error"><?=$errors['LastName']?></span>
+                                                <? } ?>
                         </div>
                         <div>
-                                <label for="Password">Password</label>
-                                <input type="text" name="Password" id="Password" value="<?=$rs['Password']?>" />
+                                <label for="Password">Password:</label>
+                                <input  type="text" name="Password" id="Password"
+                                                class="<? if(isset($errors['Password'])){ ?>error<? } ?>"
+                                                value="<?=$rs['Password']?>" />
+                                                <? if(isset($errors['Password'])){ ?>
+                                                        <span class="error"><?=$errors['Password']?></span>
+                                                <? } ?>
                         </div>
 
-                        <div><?=$rs['created_at']?></div>
-                        <div><?=$rs['updated_at']?></div>
+                        <div>
+                                <label>Creation Date:</label>
+                                <?=$rs['created_at']?>
+                        </div>
+                        <div>
+                                <label>Last Updated:</label>
+                                <?=$rs['updated_at']?>
+                        </div>
                        
                         <input type="submit" name="Submit" value="Submit" />
                         <a href="./">Cancel</a>
         </form>
 </body>
 </html>
+
 

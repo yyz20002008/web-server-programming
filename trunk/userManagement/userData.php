@@ -20,7 +20,7 @@ function SaveUser($rs)
         $error = $conn->error;
         $conn->close();
        
-        return $error;
+        return $error ? array('Server Error' => $error) : Null;
 }
 function DeleteUser($id)
 {
@@ -29,11 +29,16 @@ function DeleteUser($id)
         $error = $conn->error;
         $conn->close();
        
-        return $error;
+        return $error ? array('Server Error' => $error) : Null;
 }
 
 function ValidateUser($rs)
 {
-        return Null;
+        $errors = Null;
+        if(empty($rs['FirstName'])) $errors['FirstName'] = 'First Name is required';
+        if(empty($rs['LastName'])) $errors['LastName'] = 'Last Name is required';
+        if(strlen( $rs['Password']) < 6) $errors['Password'] = 'The Password must be at least 6 characters long';
+        return $errors;
 }
+
 
