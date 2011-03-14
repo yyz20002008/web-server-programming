@@ -1,14 +1,23 @@
-<?
+<<?
         require_once('../inc/global.php');
         require_once('userData.php');
         if(isset($_REQUEST['Submit']))
         {
                 $rs = $_REQUEST;
                 if(!$errors = ValidateUser($rs))
-                        if(!$errors = SaveUser($rs))
-                                header("location: index.php");
+                        if(isset($_REQUEST['id']))
+                        {
+                                if(!$errors = SaveUser($rs))
+                                        header("location: index.php");
+                        }else{
+                                if(!$errors = CreateUser($rs))
+                                        header("location: index.php");
+                        }
         }else{
-                $rs = GetUser($_REQUEST['id']);
+                if(isset($_REQUEST['id']))
+                        $rs = GetUser($_REQUEST['id']);
+                else
+                        $rs = NewUser();
         }
 ?>
 <!DOCTYPE html>

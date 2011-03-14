@@ -2,7 +2,6 @@
         require_once('../inc/global.php');
         require_once('userData.php');
         $result = GetUsers();
-        print_r($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,23 +17,26 @@
                                 <th>LastName</th>
                                 <th>Password</th>
                         </tr>
-        
-        <?  while($rs = $result->fetch_assoc()){?>
+       
+        <? while($rs = $result->fetch_assoc()){ ?>
                 <tr>
                         <td>
                                 <a href="view.php?id=<?=$rs['id']?>">View</a>
                                 <a href="edit.php?id=<?=$rs['id']?>">Edit</a>
                                 <a href="delete.php?id=<?=$rs['id']?>">Delete</a>
-                                
+                               
                         </td>
                         <td><?=$rs['FirstName']?></td>
                         <td><?=$rs['LastName']?></td>
                         <td><?=$rs['Password']?></td>
-                </tr>   
-        
+                </tr>  
+       
         <? } ?>
-        
+       
 </table>
+
+        <a href="edit.php">Create New User</a>
 
 </body>
 </html>
+
