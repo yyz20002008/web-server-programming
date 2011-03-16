@@ -13,9 +13,11 @@
 <table border="1">
                         <tr>
                                 <th>Actions</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
-                                <th>Password</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Zip</th>
+                                <th>Country</th>
                         </tr>
        
         <? while($rs = $result->fetch_assoc()){ ?>
@@ -26,9 +28,11 @@
                                 <a href="delete.php?id=<?=$rs['id']?>">Delete</a>
                                
                         </td>
-                        <td><?=$rs['FirstName']?></td>
-                        <td><?=$rs['LastName']?></td>
-                        <td><?=$rs['Password']?></td>
+                        <td><?=$rs['Address']?></td>
+                        <td><?=$rs['City']?></td>
+                        <td><?=$rs['State']?></td>
+                        <td><?=$rs['Zip']?></td>
+                        <td><?=$rs['Country']?></td>
                 </tr>  
        
         <? } ?>
@@ -39,4 +43,3 @@
 
 </body>
 </html>
-
