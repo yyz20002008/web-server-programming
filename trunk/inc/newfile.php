@@ -1,3 +1,9 @@
+<?
+        require_once('global.php');
+        require_once('../userManagement/userData.php');
+        $result = GetUsers();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +15,9 @@
 
 <body>
 
-<a href="index2.php">Address</a>
+<a href="../userManagement/index2.php">Address</a>
 
- <a href="index.php">People</a>
+ <a href="../userManagement/index.php">People</a>
 
 </body>
 </html>

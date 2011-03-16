@@ -1,42 +1,24 @@
-<?
-        require_once('../inc/global.php');
-        require_once('userData.php');
-        $result = GetUsers();
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Index</title>
 </head>
+
 <body>
+<b>This is MidTerm Project </b><br/>
+<em>@Yanzhao Yang</em><br/>
+<b>DATABASE TABLE:</b>
 <table border="1">
-                        <tr>
-                                <th>Actions</th>
-                                <th>FirstName</th>
-                                <th>LastName</th>
-                                <th>Password</th>
-                        </tr>
+   <tr><th><a href="./people/people.php">People</a></th> </tr>
+   
+   <tr><th><a href="./address/address.php">Address</a></th></tr>
+        
+   <tr><th><a href="./cate/categories.php">Categories</a></th></tr>
        
-        <? while($rs = $result->fetch_assoc()){ ?>
-                <tr>
-                        <td>
-                                <a href="view.php?id=<?=$rs['id']?>">View</a>
-                                <a href="edit.php?id=<?=$rs['id']?>">Edit</a>
-                                <a href="delete.php?id=<?=$rs['id']?>">Delete</a>
-                               
-                        </td>
-                        <td><?=$rs['FirstName']?></td>
-                        <td><?=$rs['LastName']?></td>
-                        <td><?=$rs['Password']?></td>
-                </tr>  
-       
-        <? } ?>
-       
+   <tr><th><a href="./connectionM/connectionmethods.php">ConnectionMethods</a></th></tr>
+  
 </table>
-
-        <a href="edit.php">Create New User</a>
-
 </body>
 </html>
-

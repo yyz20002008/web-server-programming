@@ -1,5 +1,5 @@
 <?
-        require_once('../inc/global.php');
+        require_once('../../inc/global.php');
         require_once('userData.php');
         $rs = GetUser($_REQUEST['id']);
         

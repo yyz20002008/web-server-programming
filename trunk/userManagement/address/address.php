@@ -1,5 +1,5 @@
 <?
-        require_once('../inc/global.php');
+        require_once('../../inc/global.php');
         require_once('userData.php');
         $result = GetUsers();
 ?>
@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index</title>
+<title>Address</title>
 </head>
 <body>
 <table border="1">
@@ -37,9 +37,11 @@
        
         <? } ?>
        
+        <tr>
+        <td><a href="edit.php">Create New Address</a></td>
+        <td><a href="../index.php">Back</a></td>
+        </tr>
 </table>
-
-        <a href="edit.php">Create New User</a>
 
 </body>
 </html>
