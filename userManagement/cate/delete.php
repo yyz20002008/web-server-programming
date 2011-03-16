@@ -1,10 +1,10 @@
 <?
-        require_once('../inc/global.php');
+        require_once('../../inc/global.php');
         require_once('userData.php');
         if(isset($_REQUEST['Submit']))
         {
                 if($errors = DeleteUser($_REQUEST['id'])) print_r($errors);
-                else header("location: index.php");
+                else header("location: categories.php");
         }else{
                 $rs = GetUser($_REQUEST['id']);
         }
@@ -13,12 +13,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Delete</title>
 </head>
 <body>
         <form method="post">
                         <div>
-                                Are you sure that you want to delete <b><?=$rs['FirstName']?> <?=$rs['LastName']?></b> 
+                                Are you sure that you want to delete <b><?=$rs['Name']?> </b> 
                         </div>
                         
                         <input type="submit" name="Submit" value="Submit" />
