@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>TicTacToe</title>
+</head>
+<body>
+<script type ="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+<script type ="text/javascript">
+var i=0;
+
+$(document).ready(function(){
+	
+    $("button").live('click',function(){
+
+     $("img").attr('src','blank.png');
+     });
+
+
+    $("td").live('click',function(){
+    if ($('img',this).attr('src')=="blank.png"){
+         if(i%2 == 0) $('img',this).attr('src', ' cross.png');
+         else    $('img',this).attr('src','circle.png');
+                            i++;
+      }
+     else alert("faulty operation!");
+             });
+});
+</script>
+
+
+<table border=2 >
+<tr>
+<td><img src="blank.png" alt="blank"/> </td>
+<td><img src="blank.png" alt="blank"/> </td>
+<td><img src="blank.png" alt="blank"/> </td>
+</tr>
+<tr>
+<td><img src="blank.png" alt="blank"/> </td>
+<td><img src="blank.png" alt="blank"/> </td>
+<td><img src="blank.png" alt="blank"/> </td>
+</tr>
+<tr>
+<td><img src="blank.png" alt="blank"/> </td>
+<td><img src="blank.png" alt="blank"/> </td>
+<td><img src="blank.png" alt="blank"/> </td>
+</tr>
+</table>
+
+<button> Clear </button>
+</body>
+</html>
