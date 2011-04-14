@@ -2,36 +2,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <title>Insert title here</title>
-
 <style type="text/css">
-    .menu
-    {
-    float: left;
-    width: 150px;
-    margin: 10px 10px 10px 10px;
-    
-   
-
-    }
-     .menu div{
-     
-     
-     
-     }
-     
+        .menu:hover div{
+                display: block;
+        }
+        .menu div{
+                display: none;
+        }
+        .menu
+        {
+                float: left;
+                width: 150px;
+                margin: 10px 10px 10px 10px;
+        }
 </style>
-
 </head>
 <body>
-   <div>
-         <div class="menu">
-            File
-            <div>Open<br/>Save</div>
-            <div></div>i  
-         </div> 
-      
-   </div>
+
+        <div>
+                <div class="menu">
+                        File
+                        <div>Open<br/>Save</div>
+                        <div></div>
+                </div>
+                <div class="menu">
+                        Edit
+                        <div>Copy<br/>Paste</div>
+                </div>
+                <div class="menu">
+                        Help
+                        <div>Update<br/>Do it for me</div>
+                </div>
+        </div>
 </body>
 </html>

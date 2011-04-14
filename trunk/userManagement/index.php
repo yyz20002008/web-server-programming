@@ -18,7 +18,8 @@
    <tr><th><a href="./cate/categories.php">Categories</a></th></tr>
        
    <tr><th><a href="./connectionM/connectionmethods.php">ConnectionMethods</a></th></tr>
-  
+   
+   <tr><th><a href="./ConnectionMethods/index.php">ConnectionMethods(New)</a></th></tr>
 </table>
 </body>
 </html>
