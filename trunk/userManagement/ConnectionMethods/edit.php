@@ -1,4 +1,4 @@
-       <? if(isset($errors)) { ?>
+   <? if(isset($errors)) { ?>
                 <ul class="error">
                         <? foreach($errors as $key => $error){ ?>
                                 <li><?=$key?>: <?=$error?></li>
@@ -15,18 +15,18 @@
                                 <? } ?>
                                 <input type="hidden" name="action" value="save" />
                                 <input type="submit" value="Submit" />
-                                <a href="./">Cancel</a>
+                                <a href="./" class="cancel_link">Cancel</a>
                         </td>
                         <td></td>
                         <td>
-                                <select         type="text" name="person_id" id="person_id"
+                                <select name="person_id" id="person_id"
                                                 class="<? if(isset($errors['person_id'])){ ?>error<? } ?>"
-                                                value="<?=$rs['person_id']?>" >
+                                                data-value="<?=$rs['person_id']?>" >
                                                 <?
                                                         $result = GetUsers();
                                                         while($userRS = $result->fetch_assoc()){
                                                 ?>
-                                                        <option value='<?=$userRS['id']?>'>
+                                                        <option value='<?=$userRS['id']?>' >
                                                                 <?=$userRS['FirstName']?>
                                                                 <?=$userRS['LastName']?>
                                                         </option>
@@ -42,7 +42,7 @@
                         <td>
                                 <select         type="text" name="category_id" id="category_id"
                                                 class="<? if(isset($errors['category_id'])){ ?>error<? } ?>"
-                                                value="<?=$rs['category_id']?>" >
+                                                data-value="<?=$rs['category_id']?>" >
                                                 <?
                                                         $result = GetCategories();
                                                         while($userRS = $result->fetch_assoc()){
@@ -69,3 +69,4 @@
         </tr>
         </table>
                                 </form>
+        
