@@ -34,19 +34,48 @@
                                 $("#tableWrapper").append(data);
                         });
                         $("form").live('submit',function(){
-                                $.post($(this).attr('action'), $(this).serialize(), function(data){
-                                        $("table:eq(0)").append(data);
+                                var form = $(this);
+                                $.post(form.attr('action'), form.serialize(), function(data){
+                                        record_row = form.closest(".record_row");
+                                        if(record_row.length == 0)
+                                                $("table:eq(0)").append(data);
+                                        else
+                                                record_row.replaceWith(data);
                                 });
                                 
                                 return false;
                         })
                         $('.edit_link').live('click',function(){
-                                $.get("controler.php?action=edit&id=" + $(this).attr('data-id'),function(data){
-                                                                
-                                        $("#tableWrapper").append(data);
+                                var editlink = $(this);
+                                $.get("controler.php?action=edit&id=" + editlink.attr('data-id'),function(data){
+                                        editlink.closest("tr").find("td").hide();
+                                        formTd = $("<td></td>")
+                                                .attr("colspan",4)
+                                                .html(data)
+                                                .appendTo(editlink.closest("tr"));
+                                        formTd.find("select").each(function(){
+                                                $(this).val($(this).attr('data-value'));
+                                        });
                                 });
                                 return false;
                         });
+                });
+                $('.cancel_link').live('click',function(){
+                        $(this).closest(".record_row").find("td").show();
+                        $(this).closest("form").closest("td").detach();
+                        return false;
+                });
+                $('.delete_link').live('click',function(){
+                        record_row = $(this).closest(".record_row");
+                        $.post(this.href,function(data){
+                                if(data == 'Success')
+                                {
+                                        record_row.hide('slow');
+                                }else{
+                                        $("<div></div>").css({"position":"absolute"}).html(data).appendTo(record_row);
+                                }
+                        });
+                        return false;
                 });
         </script>
 

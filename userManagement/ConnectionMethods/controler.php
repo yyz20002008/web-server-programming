@@ -22,6 +22,7 @@ switch($_REQUEST['action'])
                                 $errors = CreateConnectionMethod($rs);
                 if(!$errors)
                 {
+                        $rs = GetConnectionMethod($rs['id']);
                         include 'row.php';
                         die();
                 }
@@ -30,5 +31,10 @@ switch($_REQUEST['action'])
         case 'prompt_delete':
                 break;
         case 'delete':
+                $errors = DeleteConnectionMethod($_REQUEST['id']);
+                if($errors)
+                        echo json_encode($errors);
+                else
+                        echo 'Success';
                 break;
 }
