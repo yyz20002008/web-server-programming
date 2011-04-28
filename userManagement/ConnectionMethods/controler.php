@@ -33,8 +33,12 @@ switch($_REQUEST['action'])
         case 'delete':
                 $errors = DeleteConnectionMethod($_REQUEST['id']);
                 if($errors)
+                {
+                        $errors['status'] == 'Error';
                         echo json_encode($errors);
-                else
-                        echo 'Success';
+                }else{
+                        echo json_encode(array('status'=>'Success'));
+                }
                 break;
 }
+

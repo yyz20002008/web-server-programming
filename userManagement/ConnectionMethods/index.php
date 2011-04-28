@@ -67,14 +67,17 @@
                 });
                 $('.delete_link').live('click',function(){
                         record_row = $(this).closest(".record_row");
-                        $.post(this.href,function(data){
-                                if(data == 'Success')
-                                {
-                                        record_row.hide('slow');
-                                }else{
-                                        $("<div></div>").css({"position":"absolute"}).html(data).appendTo(record_row);
-                                }
-                        });
+                        if(confirm("Are you sure you want to delete this Record?")){
+                                $.post(this.href,function(data){
+                                        
+                                        if(data.status == 'Success')
+                                        {
+                                                record_row.hide('slow');
+                                        }else{
+                                                $("<div></div>").css({"position":"absolute"}).html(data.Error).appendTo(record_row);
+                                        }
+                                }, 'json');
+                        }
                         return false;
                 });
         </script>
