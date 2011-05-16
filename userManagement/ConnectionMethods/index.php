@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="csv.php">Download</a>
 <div id="tableWrapper">
 <table border="1">
                         <tr>
@@ -84,3 +85,4 @@
 
 </body>
 </html>
+
