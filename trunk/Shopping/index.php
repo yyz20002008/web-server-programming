@@ -4,7 +4,7 @@
         $transaction = new AuthorizeNetAIM('3Gq59TtH6', '528P6Gsrak65ztD6');
         $transaction->amount = '9.99';
         $transaction->card_num = '4007000000027';
-        $transaction->exp_date = '10/10';
+        $transaction->exp_date = '10/12';
         
         
         $response = $transaction->authorizeAndCapture();
