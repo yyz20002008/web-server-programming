@@ -3,7 +3,7 @@
         require_once('DataAccess.php');
         include_once('anet_php_sdk/AuthorizeNet.php');
         //print_r($_REQUEST);
-        $transaction = new AuthorizeNetAIM('3Gq59TtH6', '528P6Gsrak65ztD6');
+        $transaction = new AuthorizeNetAIM('8wcp38yANE', '745G4FA2xhUe48nA');
         $transaction->amount = $_REQUEST[amount];
         $transaction->card_num = $_REQUEST[credit];
         $transaction->exp_date = $_REQUEST[expdate];
