@@ -12,6 +12,7 @@
 
 <body>
 <table border="1">
+       <h2>Order Table</h2>
                         <tr>
                                 <th>Order_id</th>
                                 <th>Trans_number</th>
@@ -24,7 +25,9 @@
               include 'row.php'; 
               
         } ?>
-       
+        </table>
+<table border="1">
+       <h2>Product Table</h2>
         <tr>
         <th>Pro_id</th>
         <th>ProductName</th>

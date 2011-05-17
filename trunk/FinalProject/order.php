@@ -2,7 +2,7 @@
         require_once('../inc/global.php');
         require_once('DataAccess.php');
         $info=$_REQUEST;
-        print_r($info);
+       // print_r($info);
       
 ?>
 
