@@ -33,7 +33,7 @@
 </head>
 <body>
 
-<a href="http://cs.newpaltz.edu/~N02202273/Web/FinalProject/">Back to Home</a>
+<a href="index.php">Back to Home</a>
 
 </body>
 </html>
